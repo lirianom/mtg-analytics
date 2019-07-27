@@ -1,0 +1,4 @@
+#Global
+*.ini
+__pycache__
+.vscode
