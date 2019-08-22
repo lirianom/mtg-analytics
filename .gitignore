@@ -1,4 +1,5 @@
 #Global
+*.csv
 *.ini
 __pycache__
 .vscode
