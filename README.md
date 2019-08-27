@@ -12,7 +12,7 @@ With different formats that get cards added and removed constantly, the metagame
     * ADE Tool _ex. Postman_
 
 ## How To Run?
-_[Python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) needs to be properly installed in order to run application_
+_[Python](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) needs to be properly installed in order to run application_<br />
 _[TCGPlayer API Key](http://developer.tcgplayer.com/) required in order to query API_
 
 1. run `pip install -r ./requirements.txt` in the current directory to install all the dependencies required.
