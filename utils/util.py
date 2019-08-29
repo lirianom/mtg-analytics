@@ -1,8 +1,11 @@
 '''
+util.py
 general util functions that are used by the mtg-analytics application.
 
 get_bearer_token()
 is_time_greater(date)
+
+@Author Martin Liriano
 
 '''
 import datetime
@@ -25,26 +28,26 @@ checks to see if token is not outdated -
                 then return bearertoken
 '''
 def get_bearer_token() :
-        if is_time_greater(config['tcgplayer-api-secret']['bearertoken_time']) :
-                return config['tcgplayer-api-secret']['bearertoken']
+        if is_time_greater(config['tcgplayer']['bearertoken_time']) :
+                return config['tcgplayer']['bearertoken']
         else :
-                url = config['tcgplayer-api-secret']['tcgplayer-token-url']
+                url = config['tcgplayer']['tcgplayer-token-url']
 
                 header = {
                         'grant_type': 'client_credentials',
-                        'client_id': config['tcgplayer-api-secret']['publickey'],
-                        'client_secret': config['tcgplayer-api-secret']['privatekey'],
+                        'client_id': config['tcgplayer']['publickey'],
+                        'client_secret': config['tcgplayer']['privatekey'],
                 }
 
                 req = requests.post(url, data=header)
                 response_json = json.loads(req.text)
-                config['tcgplayer-api-secret']['bearertoken'] = response_json['access_token']
-                config['tcgplayer-api-secret']['bearertoken_time'] = response_json['.expires']
+                config['tcgplayer']['bearertoken'] = response_json['access_token']
+                config['tcgplayer']['bearertoken_time'] = response_json['.expires']
 
                 with open('config.ini', 'w') as config_file:
                         config.write(config_file)
 
-                return config['tcgplayer-api-secret']['bearertoken']
+                return config['tcgplayer']['bearertoken']
 
 '''
 is_time_greater(date) :

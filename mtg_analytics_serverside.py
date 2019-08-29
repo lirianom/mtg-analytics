@@ -1,4 +1,7 @@
-import card_db_functions as db_functions
+import sys
+sys.path.insert(1, './utils/')
+
+import db_functions
 import util
 
 db_functions.drop_table()
