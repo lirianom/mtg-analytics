@@ -5,7 +5,7 @@ chardet==3.0.4
 Click==7.0
 colorama==0.4.1
 CurrencyConverter==0.13.9
-Django==2.2.4
+Django==2.2.24
 djangorestframework==3.10.2
 djangotoolbox==1.8.0
 Flask==1.1.1
